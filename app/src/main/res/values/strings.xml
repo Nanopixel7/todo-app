@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pomodoro Study</string>
+    <string name="history">History</string>
+    <string name="stats">Stats</string>
+    <string name="no_sessions">No sessions yet.\nStart your first pomodoro!</string>
+    <string name="today_goal">Today\'s Goal: 3h per subject</string>
+    <string name="weekly_summary">This Week</string>
+</resources>

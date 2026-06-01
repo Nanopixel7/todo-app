@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="sage_green">#6FAF97</color>
+    <color name="sage_green_dark">#4D8C74</color>
+    <color name="sage_green_darker">#3A6E5A</color>
+    <color name="white">#FFFFFF</color>
+    <color name="dot_inactive">#66FFFFFF</color>
+    <color name="dot_filled">#FFFFFF</color>
+    <color name="chinese_accent">#FF8A65</color>
+    <color name="reading_accent">#7986CB</color>
+    <color name="coding_accent">#81C784</color>
+    <color name="text_secondary">#CCFFFFFF</color>
+</resources>
