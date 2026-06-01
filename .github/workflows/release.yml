@@ -5,6 +5,11 @@ on:
     tags:
       - 'v*'
   workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release tag to create (e.g. v1.0.0)'
+        required: true
+        default: 'v1.0.0'
 
 permissions:
   contents: write
@@ -44,10 +49,11 @@ jobs:
           path: PomodoroStudy.apk
 
       - name: Publish GitHub Release
-        if: startsWith(github.ref, 'refs/tags/')
+        if: startsWith(github.ref, 'refs/tags/') || github.event_name == 'workflow_dispatch'
         uses: softprops/action-gh-release@v2
         with:
-          name: Pomodoro Study Tracker ${{ github.ref_name }}
+          name: Pomodoro Study Tracker ${{ inputs.version || github.ref_name }}
+          tag_name: ${{ inputs.version || github.ref_name }}
           files: PomodoroStudy.apk
           body: |
             ## Pomodoro Study Tracker — ${{ github.ref_name }}
