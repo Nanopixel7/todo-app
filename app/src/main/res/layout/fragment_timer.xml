@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/sage_green">
+
+    <!-- Menu button top right -->
+    <ImageButton
+        android:id="@+id/btn_menu"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Menu"
+        android:src="@drawable/ic_menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Circular timer -->
+    <com.study.pomodoro.views.CircularTimerView
+        android:id="@+id/circular_timer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/dots_container"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintVertical_bias="0.42" />
+
+    <!-- Time label centered over timer circle, shown when running -->
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="25:00"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        android:fontFamily="sans-serif-thin"
+        android:letterSpacing="0.04"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/circular_timer"
+        app:layout_constraintStart_toStartOf="@+id/circular_timer"
+        app:layout_constraintTop_toTopOf="@+id/circular_timer"
+        app:layout_constraintBottom_toBottomOf="@+id/circular_timer" />
+
+    <!-- Pomodoro dots -->
+    <LinearLayout
+        android:id="@+id/dots_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/circular_timer"
+        app:layout_constraintBottom_toTopOf="@+id/subject_container">
+
+        <ImageView
+            android:id="@+id/dot1"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/dot_empty"
+            android:contentDescription="Pomodoro 1" />
+
+        <ImageView
+            android:id="@+id/dot2"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/dot_empty"
+            android:contentDescription="Pomodoro 2" />
+
+        <ImageView
+            android:id="@+id/dot3"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/dot_empty"
+            android:contentDescription="Pomodoro 3" />
+
+        <ImageView
+            android:id="@+id/dot4"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:src="@drawable/dot_empty"
+            android:contentDescription="Pomodoro 4" />
+
+    </LinearLayout>
+
+    <!-- Subject + Mode selector -->
+    <LinearLayout
+        android:id="@+id/subject_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dots_container">
+
+        <TextView
+            android:id="@+id/tv_subject_mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="POMODORO  25 MIN"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:letterSpacing="0.12"
+            android:fontFamily="sans-serif-medium"
+            android:paddingBottom="4dp"
+            android:alpha="0.85" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageButton
+                android:id="@+id/btn_subject_up"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_arrow_up"
+                android:contentDescription="Previous subject"
+                android:rotation="180" />
+
+            <TextView
+                android:id="@+id/tv_subject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:text="CHINESE"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="0.08" />
+
+            <ImageButton
+                android:id="@+id/btn_subject_down"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_arrow_up"
+                android:contentDescription="Next subject" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

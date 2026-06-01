@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.PomodoroStudy" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="colorPrimary">@color/sage_green</item>
+        <item name="colorPrimaryVariant">@color/sage_green_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:windowBackground">@color/sage_green</item>
+        <item name="android:statusBarColor">@color/sage_green</item>
+        <item name="android:navigationBarColor">@color/sage_green</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <style name="Theme.PomodoroStudy.SubScreen" parent="Theme.PomodoroStudy">
+        <item name="android:windowBackground">@color/sage_green_dark</item>
+        <item name="android:statusBarColor">@color/sage_green_dark</item>
+        <item name="android:navigationBarColor">@color/sage_green_dark</item>
+    </style>
+</resources>
